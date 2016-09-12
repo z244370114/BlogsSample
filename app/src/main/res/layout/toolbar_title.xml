@@ -1,0 +1,16 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolbar="http://schemas.android.com/apk/res-auto"
+    android:id="@id/toolbar"
+    style="@style/ToolBarStyle"
+    toolbar:logo="@mipmap/ic_launcher">
+
+    <TextView
+        android:id="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_faba8d24e1e8ff481bf4a1c44b8d3136fc4af67c.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.5\ece7b5d0870e66d8226dab6dcf47a2b12afff061\rxjava-1.1.5.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="ece7b5d0870e66d8226dab6dcf47a2b12afff061">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\rxjava-1.1.5_72bb84da967d31db1ff0c3d6ec2d6d4516ae3da6.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_3d7dc30a1b36645319f3cd9815b5bbb4c9f38a97.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_556ec19cb2e29523b4971038cd76943a9096b43c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.0_168e50b0b701924a42a40d6f99fc69f9cdccfe5c.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_6dcf8e5abed8d55d53e218e0f4f09ac9f65ed6f3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_27e884d7e19a2b25aadc196fe3dff84673379652.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_b2a194615662e19811cb8ca15d66d855824747d8.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\okhttp-3.3.0_2e3cfd8456a8ad7cac641b2ce33e8ead7bfdf73b.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\okio-1.8.0_361dd98a8708c563e2e559c81eade8f0fb801e52.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\gson-2.7_bb5acac14c8e24f663e9c72bdde5da837b72720e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_d1a2d17262a5cce0e27f5dbbf0ba5c5e10f08f31.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_d6955c7ddf925280c770de81ed8da9e187b50244.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_5c8c4f0e7db0bbed2bf70222ddb047e24b39c2ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.0_0ddfa193da9b4e6381986335001b6f036f397ec4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\io.reactivex-rxandroid-1.1.0_141e832479de0370d8148341aa72c3790d53996d.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\glide-3.7.0_19e80e438500d7793dca6ec0a07aa2a4ccc71fe9.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.retrofit2\adapter-rxjava\2.1.0\693eddc23e87ab13f9cf5001707ce8e7e1d1ff01\adapter-rxjava-2.1.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\adapter-rxjava-2.1.0_ed134f1a969639a66ec94bcf540e9d69e7757d83.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_a2c3e596d32db4f5cc334f2df295ce446b1a45e4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.0_7f9bae584f0dd4dbd4fe24238ef6e44c1680c246.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_684fa5226b99a1ce47de09746aa0fb5514158771.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_354cb7fc077ea7c564a2684464074a6bfdac1a73.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9467f46713219286e9f242fedbc09878af3bed99">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\instant-run_c19df98df0688f613b9675866c353ceb9a061136.jar" />
+    </item>
+    <item
+        jar="E:\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_4c3bc7e8e10b6e7e2bccedbdf2012b961dd7075a.jar" />
+    </item>
+    <item
+        jar="E:\tools\gradle-2.7\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.1.2\a1b4b8e4dc5f7bfa9186e79f9e267c1539a847b0\logging-interceptor-3.1.2.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="a1b4b8e4dc5f7bfa9186e79f9e267c1539a847b0">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.1.2_cd33e34c1788d5300db44c8d5910a3b7347de558.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="9f6435ed6e5da41f568a1e92efb964a64af1056e">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_df422033dde68f230de34d0b9c740ff493081101.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_88c703b7b1be750dcf685117ccbccbbf5007ed9e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.0_2808f7a785f3a7e932558ff01fb4475ee16dcac8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\Administrator\Desktop\githubDemo\BlogsSample\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_c0e32eaccb50c0f23d05d7ebe304334522f61001.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="toolbar" type="id" />
+    <item name="btn_login" type="id" />
+    <item name="et_userpassword" type="id" />
+    <item name="et_username" type="id" />
+    <item name="tv_title" type="id" />
+    <item name="btn_register" type="id" />
+
+</resources>

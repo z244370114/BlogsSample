@@ -1,0 +1,34 @@
+package com.zy.blogs.blogssample.model;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 作者：zhouyuan on  2016/9/10 15:09
+ * <p>
+ * 邮箱：244370114@qq.com
+ * <p>
+ */
+public class LoginModel implements Serializable {
+
+    private static final long serialVersionUID = -8101514707195894853L;
+
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
