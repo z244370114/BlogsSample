@@ -1,6 +1,5 @@
 package com.zy.blogs.blogssample.mvp.main;
 
-import com.zy.blogs.blogssample.api.ApiManage;
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.BasePresenter;
 import com.zy.blogs.blogssample.rxjava.ApiCallback;
@@ -21,7 +20,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
     public void loginData(String username, String password) {
         mvpView.showLoading();
-        addSubscription(ApiManage.getInstence().getLoginApiService().loginData(username, password),
+        addSubscription(apiStores.loginData(username, password),
                 new SubscriberCallBack<>(new ApiCallback<LoginModel>() {
                     @Override
                     public void onSuccess(LoginModel model) {
@@ -42,7 +41,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
     public void registerData(String username, String password) {
         mvpView.showLoading();
-        addSubscription(ApiManage.getInstence().getLoginApiService().registerData(username, password),
+        addSubscription(apiStores.registerData(username, password),
                 new SubscriberCallBack<>(new ApiCallback<LoginModel>() {
                     @Override
                     public void onSuccess(LoginModel model) {

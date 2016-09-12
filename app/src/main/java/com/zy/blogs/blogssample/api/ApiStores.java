@@ -9,12 +9,14 @@ import rx.Observable;
 
 /**
  * <p>
- * 作者：zhouyuan on  2016/9/10 15:21
+ * 作者：zhouyuan on  2016/9/12 15:01
  * <p>
  * 邮箱：244370114@qq.com
  * <p>
  */
-public interface LoginApi {
+public interface ApiStores {
+
+    String BASE_URL = "http://www.myblog.com/api/";
 
     /**
      * 登录接口

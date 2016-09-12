@@ -3,8 +3,10 @@ package com.zy.blogs.blogssample.activity;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.bumptech.glide.Glide;
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.MvpActivity;
@@ -25,6 +27,7 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
     private Button mBtn_login;
     private Button mBtn_register;
     private ProgressBar mProgressBar;
+    private ImageView iv_avatar;
 
     @Override
     protected void setUpContentView() {
@@ -37,6 +40,7 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
         mEt_username = (TextInputEditText) findViewById(R.id.et_username);
         mEt_userpassword = (TextInputEditText) findViewById(R.id.et_userpassword);
         mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
+        iv_avatar = (ImageView) findViewById(R.id.iv_avatar);
         mBtn_login = (Button) findViewById(R.id.btn_login);
         mBtn_register = (Button) findViewById(R.id.btn_register);
         mBtn_login.setOnClickListener(this);
@@ -60,6 +64,11 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
     @Override
     public void loginData(LoginModel data) {
         ShowToast("您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
+        Glide.with(this)
+                .load(data.getAvatar_url())
+                .asBitmap()
+                .centerCrop()
+                .into(iv_avatar);
     }
 
     @Override

@@ -1,5 +1,8 @@
 package com.zy.blogs.blogssample.mvp;
 
+import com.zy.blogs.blogssample.api.ApiManage;
+import com.zy.blogs.blogssample.api.ApiStores;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -16,6 +19,7 @@ import rx.subscriptions.CompositeSubscription;
 public class BasePresenter<V> implements Presenter<V> {
 
     public V mvpView;
+    public ApiStores apiStores = ApiManage.getInstence().retrofit().create(ApiStores.class);
     private CompositeSubscription mCompositeSubscription;
 
     @Override
