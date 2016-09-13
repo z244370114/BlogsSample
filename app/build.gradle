@@ -23,6 +23,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+// 友盟多渠道打包
+    productFlavors {
+        kuaiyidian {}
+        anzhuo {}
+        yingyonghui {}
+        baidu {}
+        wandoujia {}
+        c360 {}
+        anzhi {}
+        huawei {}
+        lenovo {}
+        mumayi {}
+        jifeng {}
+        yingyongbao {}
+        xiaomi {}
+        yidong {}
+        liantong {}
+        dianxin {}
+        wangyi {}
+        _91 {}
+        meizu {}
+        tf {}
+    }
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
 }
 
 dependencies {

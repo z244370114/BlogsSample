@@ -6,5 +6,7 @@
     <item name="et_username" type="id" />
     <item name="tv_title" type="id" />
     <item name="btn_register" type="id" />
+    <item name="iv_upfile" type="id" />
+    <item name="btn_upfile" type="id" />
 
 </resources>

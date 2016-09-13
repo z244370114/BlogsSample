@@ -1,10 +1,14 @@
 package com.zy.blogs.blogssample.api;
 
 import com.zy.blogs.blogssample.model.LoginModel;
+import com.zy.blogs.blogssample.model.UpdateModel;
 
+import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import rx.Observable;
 
 /**
@@ -39,4 +43,8 @@ public interface ApiStores {
     @FormUrlEncoded
     @POST("user-register/register")
     Observable<LoginModel> registerData(@Field("username") String username, @Field("password") String password);
+
+    @Multipart
+    @POST("upload-file/app-upload-file?action=uploadimage&encode=utf-8")
+    Observable<UpdateModel> updateImage(@Part("upfile\"; filename=\"1111.jpg\"") RequestBody file);
 }

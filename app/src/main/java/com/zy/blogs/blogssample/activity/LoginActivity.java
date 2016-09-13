@@ -1,5 +1,6 @@
 package com.zy.blogs.blogssample.activity;
 
+import android.os.Environment;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,11 @@ import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.MvpActivity;
 import com.zy.blogs.blogssample.mvp.main.LoginPresenter;
 import com.zy.blogs.blogssample.mvp.main.LoginView;
+
+import java.io.File;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 /**
  * <p>
@@ -28,6 +34,9 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
     private Button mBtn_register;
     private ProgressBar mProgressBar;
     private ImageView iv_avatar;
+    private Button btn_upfile;
+    private RequestBody body;
+
 
     @Override
     protected void setUpContentView() {
@@ -43,8 +52,14 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
         iv_avatar = (ImageView) findViewById(R.id.iv_avatar);
         mBtn_login = (Button) findViewById(R.id.btn_login);
         mBtn_register = (Button) findViewById(R.id.btn_register);
+        btn_upfile = (Button) findViewById(R.id.btn_upfile);
         mBtn_login.setOnClickListener(this);
         mBtn_register.setOnClickListener(this);
+        btn_upfile.setOnClickListener(this);
+        String path = Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera/1111.jpg";
+        File file = new File(path);
+        body =
+                RequestBody.create(MediaType.parse("multipart/form-data"), file);
     }
 
     @Override
@@ -57,6 +72,9 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
             case R.id.btn_register:
                 mvpPresenter.registerData(mEt_username.getText().toString().trim(),
                         mEt_userpassword.getText().toString().trim());
+                break;
+            case R.id.btn_upfile:
+                mvpPresenter.updataImage(body);
                 break;
         }
     }
@@ -79,7 +97,6 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
     @Override
     public void getDataFail(String msg) {
         ShowToast("失败：" + msg);
-
     }
 
     @Override
@@ -100,6 +117,5 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
     protected LoginPresenter createPresenter() {
         return new LoginPresenter(this);
     }
-
 
 }

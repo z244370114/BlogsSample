@@ -1,9 +1,12 @@
 package com.zy.blogs.blogssample.mvp.main;
 
 import com.zy.blogs.blogssample.model.LoginModel;
+import com.zy.blogs.blogssample.model.UpdateModel;
 import com.zy.blogs.blogssample.mvp.BasePresenter;
 import com.zy.blogs.blogssample.rxjava.ApiCallback;
 import com.zy.blogs.blogssample.rxjava.SubscriberCallBack;
+
+import okhttp3.RequestBody;
 
 /**
  * <p>
@@ -58,5 +61,25 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                         mvpView.hideLoading();
                     }
                 }));
+    }
+
+    public void updataImage(RequestBody file) {
+        mvpView.showLoading();
+        addSubscription(apiStores.updateImage(file), new SubscriberCallBack<>(new ApiCallback<UpdateModel>() {
+            @Override
+            public void onSuccess(UpdateModel model) {
+                System.out.println("model = " + model);
+            }
+
+            @Override
+            public void onFailure(int code, String msg) {
+                mvpView.getDataFail(msg);
+            }
+
+            @Override
+            public void onCompleted() {
+                mvpView.hideLoading();
+            }
+        }));
     }
 }
