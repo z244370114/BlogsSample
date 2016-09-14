@@ -44,6 +44,11 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
         bindViews();
     }
 
+    @Override
+    protected void setUpData() {
+
+    }
+
 
     private void bindViews() {
         mEt_username = (TextInputEditText) findViewById(R.id.et_username);

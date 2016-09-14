@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.zy.blogs.blogssample.ActivityCollector;
 import com.zy.blogs.blogssample.R;
+import com.zy.blogs.blogssample.util.FontHelper;
+
+import butterknife.ButterKnife;
 
 
 /**
@@ -38,8 +41,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
         super.onCreate(savedInstanceState);
         Log.e("Activity", this.getClass().getSimpleName());
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setUpContentView();
+        ButterKnife.bind(this);
+        setUpData();
+        FontHelper.injectFont(findViewById(android.R.id.content));
         ActivityCollector.getInstance().addActivity(this);
     }
 
@@ -47,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
 
 //    protected abstract void setUpView();
 
-//    protected abstract void setUpData();
+    protected abstract void setUpData();
 
     @Override
     public void setContentView(int layoutResID) {
@@ -74,8 +80,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
             toolbar_title = (TextView) findViewById(R.id.tv_title);
             if (mode == MODE_BACK) {
                 toolbar.setNavigationIcon(R.drawable.ic_toolbar_back);
+                toolbar.setNavigationOnClickListener(view -> onNavigationBtnClicked());
             }
-            toolbar.setNavigationOnClickListener(view -> onNavigationBtnClicked());
             setUpTitle(titleResId);
             setUpMenu(menuId);
         }
@@ -90,6 +96,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
             }
         }
     }
+
 
     protected void setUpTitle(int titleResId) {
         if (titleResId > 0 && toolbar_title != null) {
@@ -136,7 +143,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ActivityCollector.removeActivity(this);
+        ButterKnife.unbind(this);
+        ActivityCollector.getInstance().removeActivity(this);
     }
 
     @Override

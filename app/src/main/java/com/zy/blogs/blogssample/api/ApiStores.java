@@ -44,6 +44,11 @@ public interface ApiStores {
     @POST("user-register/register")
     Observable<LoginModel> registerData(@Field("username") String username, @Field("password") String password);
 
+    /**
+     * 上传图片
+     * @param file
+     * @return
+     */
     @Multipart
     @POST("upload-file/app-upload-file?action=uploadimage&encode=utf-8")
     Observable<UpdateModel> updateImage(@Part("upfile\"; filename=\"1111.jpg\"") RequestBody file);

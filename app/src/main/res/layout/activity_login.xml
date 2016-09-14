@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@mipmap/ic_launcher"
+            android:scaleType="centerCrop" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
