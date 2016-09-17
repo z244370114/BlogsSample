@@ -10,5 +10,6 @@
     <item name="btn_upfile" type="id" />
     <item name="tab_layout" type="id" />
     <item name="viewPager" type="id" />
+    <item name="recycler_view" type="id" />
 
 </resources>

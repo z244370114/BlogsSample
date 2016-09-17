@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
+import com.zy.blogs.blogssample.fragment.BlogsFragment;
+import com.zy.blogs.blogssample.fragment.HomeFragment;
 
 import butterknife.Bind;
 
@@ -46,11 +48,11 @@ public class MainActivity extends BaseActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return null;
+                    return new HomeFragment();
                 case 1:
-                    return null;
+                    return new BlogsFragment();
                 default:
-                    return null;
+                    return new HomeFragment();
             }
         }
 

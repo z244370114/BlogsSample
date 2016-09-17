@@ -6,7 +6,7 @@ package com.zy.blogs.blogssample.rxjava;
  */
 public interface ApiCallback<T> {
 
-    void onSuccess(T model);
+    void onSuccess(T data);
 
     void onFailure(int code, String msg);
 

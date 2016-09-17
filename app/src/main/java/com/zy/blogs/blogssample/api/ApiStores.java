@@ -2,6 +2,7 @@ package com.zy.blogs.blogssample.api;
 
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.model.UpdateModel;
+import com.zy.blogs.blogssample.model.UserData;
 
 import okhttp3.RequestBody;
 import retrofit2.http.Field;
@@ -46,10 +47,18 @@ public interface ApiStores {
 
     /**
      * 上传图片
+     *
      * @param file
      * @return
      */
     @Multipart
     @POST("upload-file/app-upload-file?action=uploadimage&encode=utf-8")
     Observable<UpdateModel> updateImage(@Part("upfile\"; filename=\"1111.jpg\"") RequestBody file);
+
+    @FormUrlEncoded
+    @POST("use/list")
+    Observable<UserData> homeLoad(@Field("rpp") String app, @Field("page") String page,
+                                  @Field("showall") String showall);
+
+
 }

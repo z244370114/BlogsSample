@@ -1,10 +1,10 @@
 package com.zy.blogs.blogssample.base;
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,22 +17,38 @@ import rx.subscriptions.CompositeSubscription;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
-    public Activity mActivity;
+    public FragmentActivity mActivity;
+    private View mRootView;
+    private LayoutInflater inflater;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        return super.onCreateView(inflater, container, savedInstanceState);
+        if (mRootView == null) {
+            this.inflater = inflater;
+            mRootView = inflater.inflate(setLayoutResouceId(), container, false);
+            ButterKnife.bind(this, mRootView);
+            setUpContentView();
+        }
+        ViewGroup parent = (ViewGroup) mRootView.getParent();
+        if (parent != null) {
+            parent.removeView(mRootView);
+        }
+        return mRootView;
     }
+
+    protected abstract int setLayoutResouceId();
+
+    protected abstract void setUpContentView();
+
+    protected abstract void setUpData();
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
         mActivity = getActivity();
     }
 
