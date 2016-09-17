@@ -8,3 +8,6 @@ gradle/*
 /captures
 .idea/*
 app/build/*
+app/build.gradle
+build.gradle
+build/*
