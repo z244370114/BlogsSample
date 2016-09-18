@@ -11,5 +11,10 @@
     <item name="tab_layout" type="id" />
     <item name="viewPager" type="id" />
     <item name="recycler_view" type="id" />
+    <item name="tv_username" type="id" />
+    <item name="tv_createtime" type="id" />
+    <item name="iv_head_portrait" type="id" />
+    <item name="nv_menu" type="id" />
+    <item name="drawer_layout" type="id" />
 
 </resources>

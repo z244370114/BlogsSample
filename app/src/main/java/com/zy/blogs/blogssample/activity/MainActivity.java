@@ -3,7 +3,7 @@ package com.zy.blogs.blogssample.activity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.zy.blogs.blogssample.R;
@@ -20,6 +20,10 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.viewPager)
     ViewPager viewPager;
 
+//    @Bind(R.id.drawer_layout)
+//    DrawerLayout mDrawerLayout;
+//    @Bind(R.id.nv_menu)
+//    NavigationView mNavigationView;
 
     @Override
     protected void setUpContentView() {
@@ -28,13 +32,43 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void setUpData() {
-        viewPager.setAdapter(new TabPagerAdapter(getSupportFragmentManager()));
-
+        toolbar.setNavigationIcon(R.drawable.icon_menu);
+        TabPagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        toolbar.setNavigationOnClickListener(v -> {
+            showToast("显示侧滑菜单");
+//            mDrawerLayout.openDrawer(GravityCompat.START);
+        });
+
+//        mNavigationView.setNavigationItemSelectedListener(item -> {
+//            item.setChecked(true);
+//            mDrawerLayout.closeDrawers();
+//            return true;
+//        });
     }
 
 
-    class TabPagerAdapter extends FragmentPagerAdapter {
+    class TabPagerAdapter extends FragmentStatePagerAdapter {
 
         private final String[] TITLES = {getString(R.string.home),
                 getString(R.string.app_name)};

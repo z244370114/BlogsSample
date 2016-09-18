@@ -153,7 +153,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
     }
 
 
-    public void ShowToast(String text) {
+    public void showToast(String text) {
         if (!TextUtils.isEmpty(text)) {
             if (mToast == null) {
                 mToast = Toast.makeText(getApplicationContext(), text,

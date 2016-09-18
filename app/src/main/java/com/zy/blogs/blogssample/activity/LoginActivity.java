@@ -86,7 +86,7 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
 
     @Override
     public void loginData(LoginModel data) {
-        ShowToast("您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
+        showToast("您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
         Glide.with(this)
                 .load(data.getAvatar_url())
                 .asBitmap()
@@ -96,12 +96,12 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
 
     @Override
     public void registerData(LoginModel data) {
-        ShowToast("恭喜您注册成功！\n 您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
+        showToast("恭喜您注册成功！\n 您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
     }
 
     @Override
     public void getDataFail(String msg) {
-        ShowToast("失败：" + msg);
+        showToast("失败：" + msg);
     }
 
     @Override

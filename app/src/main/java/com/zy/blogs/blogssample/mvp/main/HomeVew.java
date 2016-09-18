@@ -1,6 +1,6 @@
 package com.zy.blogs.blogssample.mvp.main;
 
-import com.zy.blogs.blogssample.model.UserData;
+import com.zy.blogs.blogssample.model.UserModel;
 import com.zy.blogs.blogssample.mvp.BaseView;
 
 /**
@@ -8,6 +8,6 @@ import com.zy.blogs.blogssample.mvp.BaseView;
  */
 public interface HomeVew extends BaseView {
 
-    void loadData(UserData userData);
+    void loadData(UserModel userModel);
 
 }
