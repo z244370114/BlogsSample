@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity1" />
         <activity android:name=".activity.LoginActivity" />
         <!-- UMeng 配置-->
         <meta-data
