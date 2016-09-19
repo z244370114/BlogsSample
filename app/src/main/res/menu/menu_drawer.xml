@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_my_info"
+            android:checkable="true"
+            android:icon="@drawable/icon_nav_user"
+            android:title="@string/my_info" />
+        <item
+            android:id="@+id/nav_modified_password"
+            android:checkable="true"
+            android:icon="@drawable/icon_nav_modify"
+            android:title="@string/modified_password" />
+        <item
+            android:id="@+id/nav_action_settings"
+            android:checkable="true"
+            android:icon="@drawable/icon_nav_settings"
+            android:title="@string/action_settings" />
+        <item
+            android:id="@+id/nav_about"
+            android:checkable="true"
+            android:icon="@drawable/icon_nav_about"
+            android:title="@string/about" />
+    </group>
 
-    <item
-        android:id="@+id/nav_home"
-        android:title="Home" />
-    <item
-        android:id="@+id/nav_messages"
-        android:title="Messages" />
-    <item
-        android:id="@+id/nav_friends"
-        android:title="Friends" />
-    <item
-        android:id="@+id/nav_discussion"
-        android:title="Discussion" />
-
-    <item android:title="Sub items">
-        <menu>
-            <item android:title="Sub item 1" />
-            <item android:title="Sub item 2" />
-        </menu>
-    </item>
+    <!--<item android:title="Sub items">-->
+    <!--<menu>-->
+    <!--<item android:title="Sub item 1" />-->
+    <!--<item android:title="Sub item 2" />-->
+    <!--</menu>-->
+    <!--</item>-->
 
 </menu>

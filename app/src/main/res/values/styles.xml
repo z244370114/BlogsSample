@@ -6,11 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/primary_text</item>
+        <!--<item name="android:textColor">@color/primary_text</item>-->
         <item name="android:textColorSecondary">@color/secondary_text</item>
         <item name="android:divider">@color/divider</item>
         <item name="android:icon">@color/icons</item>
         <item name="windowActionBar">false</item>
+        <item name="actionOverflowMenuStyle">@style/MyMenuStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -35,5 +36,10 @@
         <!--<item name="android:colorBackground">@color/grey</item>-->
         <!--字体和图标的颜色-->
         <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="MyMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:popupBackground">?attr/colorPrimary</item>
     </style>
 </resources>

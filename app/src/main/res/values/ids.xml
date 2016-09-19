@@ -14,7 +14,8 @@
     <item name="tv_username" type="id" />
     <item name="tv_createtime" type="id" />
     <item name="iv_head_portrait" type="id" />
-    <item name="nv_menu" type="id" />
+    <item name="nav_menu" type="id" />
     <item name="drawer_layout" type="id" />
+    <item name="rl_header" type="id" />
 
 </resources>

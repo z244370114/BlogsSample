@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.umeng.analytics.MobclickAgent;
 import com.zy.blogs.blogssample.ActivityCollector;
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.util.FontHelper;
@@ -145,6 +146,20 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
         super.onDestroy();
         ButterKnife.unbind(this);
         ActivityCollector.getInstance().removeActivity(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPageStart(this.getClass().getSimpleName());
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onPageEnd(this.getClass().getSimpleName());
+        MobclickAgent.onResume(this);
     }
 
     @Override

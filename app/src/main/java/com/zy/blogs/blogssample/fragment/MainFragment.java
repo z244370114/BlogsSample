@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 import com.zy.blogs.blogssample.R;
+import com.zy.blogs.blogssample.activity.MainActivity1;
 import com.zy.blogs.blogssample.base.BaseFragment;
 
 import butterknife.Bind;
@@ -42,6 +43,7 @@ public class MainFragment extends BaseFragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                mToolbar.setTitle(tab.getText());
             }
 
             @Override
@@ -53,6 +55,10 @@ public class MainFragment extends BaseFragment {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+        });
+
+        mToolbar.setNavigationOnClickListener(v -> {
+            ((MainActivity1) getActivity()).openDrawerLayou();
         });
 
     }
