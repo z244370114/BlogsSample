@@ -55,7 +55,7 @@ public class MainActivity1 extends BaseActivity {
             int menuId = menuItem.getItemId();
             switch (menuId) {
                 case R.id.nav_my_info:
-
+                    GoActivity(MyInfoActivity.class);
                     break;
                 case R.id.nav_modified_password:
 

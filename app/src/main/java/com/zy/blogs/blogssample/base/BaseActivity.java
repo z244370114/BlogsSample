@@ -69,6 +69,12 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
         setContentView(layoutResID, titleResId, -1, mode);
     }
 
+    /**
+     * @param layoutResID 布局资源ID
+     * @param titleResId  标题资源ID
+     * @param menuId      右边布局菜单资源ID
+     * @param mode        判断是否初始化 toolbar
+     */
     public void setContentView(int layoutResID, int titleResId, int menuId, int mode) {
         super.setContentView(layoutResID);
         setUpToolbar(titleResId, menuId, mode);
@@ -77,7 +83,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
     private void setUpToolbar(int titleResId, int menuId, int mode) {
         if (mode != MODE_NONE) {
             toolbar = (Toolbar) findViewById(R.id.toolbar);
-            toolbar.setTitle("");
+//            toolbar.setTitle("");
             toolbar_title = (TextView) findViewById(R.id.tv_title);
             if (mode == MODE_BACK) {
                 toolbar.setNavigationIcon(R.drawable.ic_toolbar_back);

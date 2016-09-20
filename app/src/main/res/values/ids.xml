@@ -17,5 +17,10 @@
     <item name="nav_menu" type="id" />
     <item name="drawer_layout" type="id" />
     <item name="rl_header" type="id" />
+    <item name="collapsing_toolbar_layout" type="id" />
+    <item name="app_bar_layout" type="id" />
+    <item name="tv_detail" type="id" />
+    <item name="tv_email" type="id" />
+    <item name="btn_redact" type="id" />
 
 </resources>

@@ -52,6 +52,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:hint="@string/userpassword"
+                android:inputType="textPassword"
                 android:text="hdbhdb"
                 android:textSize="15sp" />
 
