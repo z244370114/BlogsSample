@@ -1,5 +1,6 @@
 package com.zy.blogs.blogssample.mvp.main;
 
+import com.zy.blogs.blogssample.model.ErrModel;
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.model.UpdateModel;
 import com.zy.blogs.blogssample.mvp.BasePresenter;
@@ -31,8 +32,9 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                     }
 
                     @Override
-                    public void onFailure(int code, String msg) {
-                        mvpView.getDataFail(msg);
+                    public void onFailure(int code, String msg, ErrModel errData) {
+                        String message = errData.getError().getMessage();
+                        mvpView.getDataFail(message);
                     }
 
                     @Override
@@ -52,7 +54,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                     }
 
                     @Override
-                    public void onFailure(int code, String msg) {
+                    public void onFailure(int code, String msg, ErrModel errData) {
                         mvpView.getDataFail(msg);
                     }
 
@@ -72,7 +74,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
             }
 
             @Override
-            public void onFailure(int code, String msg) {
+            public void onFailure(int code, String msg, ErrModel errData) {
                 mvpView.getDataFail(msg);
             }
 

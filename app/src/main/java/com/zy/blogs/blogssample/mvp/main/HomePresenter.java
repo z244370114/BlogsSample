@@ -1,5 +1,6 @@
 package com.zy.blogs.blogssample.mvp.main;
 
+import com.zy.blogs.blogssample.model.ErrModel;
 import com.zy.blogs.blogssample.model.UserModel;
 import com.zy.blogs.blogssample.mvp.BasePresenter;
 import com.zy.blogs.blogssample.rxjava.ApiCallback;
@@ -24,8 +25,9 @@ public class HomePresenter extends BasePresenter<HomeVew> {
                     }
 
                     @Override
-                    public void onFailure(int code, String msg) {
-                        mvpView.getDataFail(msg);
+                    public void onFailure(int code, String msg, ErrModel errData) {
+                        String message = errData.getError().getMessage();
+                        mvpView.getDataFail(message);
                     }
 
                     @Override

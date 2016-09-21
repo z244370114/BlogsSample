@@ -9,6 +9,8 @@ import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.zy.blogs.blogssample.R;
+import com.zy.blogs.blogssample.model.BaseModel;
+import com.zy.blogs.blogssample.model.ErrModel;
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.MvpActivity;
 import com.zy.blogs.blogssample.mvp.main.LoginPresenter;
@@ -65,6 +67,8 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
         File file = new File(path);
         body =
                 RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        BaseModel<ErrModel> baseModel = new BaseModel<>();
+        
     }
 
     @Override
@@ -101,7 +105,7 @@ public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginV
 
     @Override
     public void getDataFail(String msg) {
-        showToast("失败：" + msg);
+        showToast(msg);
     }
 
     @Override

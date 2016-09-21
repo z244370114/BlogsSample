@@ -32,9 +32,9 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MyInfoActivity" />
         <!-- UMeng 配置-->
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}" />
+        <!--<meta-data-->
+            <!--android:name="UMENG_CHANNEL"-->
+            <!--android:value="${UMENG_CHANNEL_VALUE}" />-->
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="57df487167e58e15eb0004ba" />
