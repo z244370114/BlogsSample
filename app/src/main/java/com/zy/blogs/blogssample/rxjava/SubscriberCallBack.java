@@ -63,12 +63,11 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
                     msg = "网络错误";  //均视为网络错误
                     break;
             }
-
             apiCallback.onFailure(code, msg, errData);
         } else if (e instanceof JsonParseException
                 || e instanceof JSONException
                 || e instanceof ParseException) {
-            apiCallback.onFailure(0, "JSON解析错误", errData);
+            apiCallback.onFailure(0, "JSON解析错误");
         }
         apiCallback.onCompleted();
     }

@@ -31,6 +31,12 @@ public class HomePresenter extends BasePresenter<HomeVew> {
                     }
 
                     @Override
+                    public void onFailure(int code, String msg) {
+
+                        mvpView.getDataFail(msg);
+                    }
+
+                    @Override
                     public void onCompleted() {
                         mvpView.hideLoading();
                     }

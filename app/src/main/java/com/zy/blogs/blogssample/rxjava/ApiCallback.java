@@ -12,7 +12,8 @@ public interface ApiCallback<T> {
 
     void onFailure(int code, String msg, ErrModel errData);
 
-    void onCompleted();
+    void onFailure(int code, String msg);
 
+    void onCompleted();
 
 }

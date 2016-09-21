@@ -38,6 +38,11 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                     }
 
                     @Override
+                    public void onFailure(int code, String msg) {
+                        mvpView.getDataFail(msg);
+                    }
+
+                    @Override
                     public void onCompleted() {
                         mvpView.hideLoading();
                     }
@@ -59,6 +64,12 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                     }
 
                     @Override
+                    public void onFailure(int code, String msg) {
+
+                        mvpView.getDataFail(msg);
+                    }
+
+                    @Override
                     public void onCompleted() {
                         mvpView.hideLoading();
                     }
@@ -67,21 +78,28 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
     public void updataImage(RequestBody file) {
         mvpView.showLoading();
-        addSubscription(apiStores.updateImage(file), new SubscriberCallBack<>(new ApiCallback<UpdateModel>() {
-            @Override
-            public void onSuccess(UpdateModel model) {
-                System.out.println("model = " + model);
-            }
+        addSubscription(apiStores.updateImage(file),
+                new SubscriberCallBack<>(new ApiCallback<UpdateModel>() {
+                    @Override
+                    public void onSuccess(UpdateModel model) {
+                        System.out.println("model = " + model);
+                    }
 
-            @Override
-            public void onFailure(int code, String msg, ErrModel errData) {
-                mvpView.getDataFail(msg);
-            }
+                    @Override
+                    public void onFailure(int code, String msg, ErrModel errData) {
+                        mvpView.getDataFail(msg);
+                    }
 
-            @Override
-            public void onCompleted() {
-                mvpView.hideLoading();
-            }
-        }));
+                    @Override
+                    public void onFailure(int code, String msg) {
+
+                        mvpView.getDataFail(msg);
+                    }
+
+                    @Override
+                    public void onCompleted() {
+                        mvpView.hideLoading();
+                    }
+                }));
     }
 }
