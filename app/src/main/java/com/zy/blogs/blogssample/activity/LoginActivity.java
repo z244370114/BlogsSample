@@ -1,25 +1,12 @@
 package com.zy.blogs.blogssample.activity;
 
-import android.os.Environment;
-import android.support.design.widget.TextInputEditText;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 
-import com.bumptech.glide.Glide;
+import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
+
 import com.zy.blogs.blogssample.R;
-import com.zy.blogs.blogssample.model.BaseModel;
-import com.zy.blogs.blogssample.model.ErrModel;
-import com.zy.blogs.blogssample.model.LoginModel;
-import com.zy.blogs.blogssample.mvp.MvpActivity;
-import com.zy.blogs.blogssample.mvp.main.LoginPresenter;
-import com.zy.blogs.blogssample.mvp.main.LoginView;
-
-import java.io.File;
-
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
+import com.zy.blogs.blogssample.base.BaseActivity;
+import com.zy.blogs.blogssample.fragment.LoginFragment;
 
 /**
  * <p>
@@ -28,103 +15,51 @@ import okhttp3.RequestBody;
  * 邮箱：244370114@qq.com
  * <p>
  */
-public class LoginActivity extends MvpActivity<LoginPresenter> implements LoginView, View.OnClickListener {
-
-    private TextInputEditText mEt_username;
-    private TextInputEditText mEt_userpassword;
-    private Button mBtn_login;
-    private Button mBtn_register;
-    private ProgressBar mProgressBar;
-    private ImageView iv_avatar;
-    private Button btn_upfile;
-    private RequestBody body;
+public class LoginActivity extends BaseActivity {
 
 
     @Override
     protected void setUpContentView() {
         setContentView(R.layout.activity_login, R.string.login, R.menu.menu_main, 0);
-        bindViews();
     }
 
     @Override
     protected void setUpData() {
-
+        addFragment(new LoginFragment());
     }
 
 
-    private void bindViews() {
-        mEt_username = (TextInputEditText) findViewById(R.id.et_username);
-        mEt_userpassword = (TextInputEditText) findViewById(R.id.et_userpassword);
-        mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
-        iv_avatar = (ImageView) findViewById(R.id.iv_avatar);
-        mBtn_login = (Button) findViewById(R.id.btn_login);
-        mBtn_register = (Button) findViewById(R.id.btn_register);
-        btn_upfile = (Button) findViewById(R.id.btn_upfile);
-        mBtn_login.setOnClickListener(this);
-        mBtn_register.setOnClickListener(this);
-        btn_upfile.setOnClickListener(this);
-        String path = Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera/1111.jpg";
-        File file = new File(path);
-        body =
-                RequestBody.create(MediaType.parse("multipart/form-data"), file);
-        BaseModel<ErrModel> baseModel = new BaseModel<>();
-        
+    public void addFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.login_layout, fragment)
+                .addToBackStack(((Object) fragment).getClass().getSimpleName())
+                .commitAllowingStateLoss();
+        System.out.println("getSupportFragmentManager().getBackStackEntryCount() = "
+                + getSupportFragmentManager().getBackStackEntryCount());
+        toolbar_title.setText(R.string.register);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_login:
-                mvpPresenter.loginData(mEt_username.getText().toString().trim(),
-                        mEt_userpassword.getText().toString().trim());
-                break;
-            case R.id.btn_register:
-                mvpPresenter.registerData(mEt_username.getText().toString().trim(),
-                        mEt_userpassword.getText().toString().trim());
-                break;
-            case R.id.btn_upfile:
-                mvpPresenter.updataImage(body);
-                break;
+    public void removeFragment() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
+            toolbar_title.setText(R.string.login);
+        } else {
+            finish();
         }
     }
 
-    @Override
-    public void loginData(LoginModel data) {
-        showToast("您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
-        Glide.with(this)
-                .load(data.getAvatar_url())
-                .asBitmap()
-                .centerCrop()
-                .into(iv_avatar);
-    }
 
     @Override
-    public void registerData(LoginModel data) {
-        showToast("恭喜您注册成功！\n 您登录的账号是：" + data.getUsername() + "\n" + "您登录的密码是：" + data.getPassword());
-    }
-
-    @Override
-    public void getDataFail(String msg) {
-        showToast(msg);
-    }
-
-    @Override
-    public void showLoading() {
-        if (mProgressBar != null) {
-            mProgressBar.setVisibility(View.VISIBLE);
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+                getSupportFragmentManager().popBackStack();
+                toolbar_title.setText(R.string.login);
+                System.out.println("getSupportFragmentManager().getBackStackEntryCount() = "
+                        + getSupportFragmentManager().getBackStackEntryCount());
+                return true;
+            }
         }
+        return super.onKeyDown(keyCode, event);
     }
-
-    @Override
-    public void hideLoading() {
-        if (mProgressBar != null) {
-            mProgressBar.setVisibility(View.INVISIBLE);
-        }
-    }
-
-    @Override
-    protected LoginPresenter createPresenter() {
-        return new LoginPresenter(this);
-    }
-
 }

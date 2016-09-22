@@ -1,10 +1,10 @@
 package com.zy.blogs.blogssample.base;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +20,7 @@ import rx.subscriptions.CompositeSubscription;
  */
 public abstract class BaseFragment extends Fragment {
 
-    public FragmentActivity mActivity;
+    public Activity mActivity;
     private View mRootView;
     private LayoutInflater inflater;
     private Toast mToast;
@@ -33,6 +33,7 @@ public abstract class BaseFragment extends Fragment {
             mRootView = inflater.inflate(setLayoutResouceId(), container, false);
             ButterKnife.bind(this, mRootView);
             setUpContentView();
+//            initAppView(mRootView, savedInstanceState);
         }
         ViewGroup parent = (ViewGroup) mRootView.getParent();
         if (parent != null) {
@@ -40,6 +41,8 @@ public abstract class BaseFragment extends Fragment {
         }
         return mRootView;
     }
+
+//    protected abstract void initAppView(View mRootView, Bundle savedInstanceState);
 
     protected abstract int setLayoutResouceId();
 

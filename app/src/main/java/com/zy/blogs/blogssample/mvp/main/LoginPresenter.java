@@ -60,7 +60,8 @@ public class LoginPresenter extends BasePresenter<LoginView> {
 
                     @Override
                     public void onFailure(int code, String msg, ErrModel errData) {
-                        mvpView.getDataFail(msg);
+                        String massage = errData.getError().getMessage();
+                        mvpView.getDataFail(massage);
                     }
 
                     @Override

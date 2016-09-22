@@ -22,5 +22,7 @@
     <item name="tv_detail" type="id" />
     <item name="tv_email" type="id" />
     <item name="btn_redact" type="id" />
+    <item name="et_email" type="id" />
+    <item name="iv_avatar" type="id" />
 
 </resources>
