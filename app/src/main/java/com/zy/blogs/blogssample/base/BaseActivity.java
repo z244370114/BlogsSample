@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
 
+    public static final String TYPE = "type";
     protected Toolbar toolbar;
     protected TextView toolbar_title;
     public static final int MODE_BACK = 0;
@@ -112,7 +113,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
     }
 
     protected void onNavigationBtnClicked() {
-        finish();
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            finish();
+        }
     }
 
     @Override
@@ -138,7 +143,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
      */
     public void GoActivity(Class<?> c, String type) {
         Intent intent = new Intent(this, c);
-        intent.putExtra("type", type);
+        intent.putExtra(TYPE, type);
         this.startActivity(intent);
     }
 

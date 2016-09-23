@@ -24,5 +24,10 @@
     <item name="btn_redact" type="id" />
     <item name="et_email" type="id" />
     <item name="iv_avatar" type="id" />
+    <item name="et_newuserpassword" type="id" />
+    <item name="tv_post" type="id" />
+    <item name="tv_corporation" type="id" />
+    <item name="tv_recommend" type="id" />
+    <item name="tv_blogs_address" type="id" />
 
 </resources>

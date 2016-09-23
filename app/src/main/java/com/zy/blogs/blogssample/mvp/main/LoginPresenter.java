@@ -7,6 +7,8 @@ import com.zy.blogs.blogssample.mvp.BasePresenter;
 import com.zy.blogs.blogssample.rxjava.ApiCallback;
 import com.zy.blogs.blogssample.rxjava.SubscriberCallBack;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 
 /**
@@ -56,6 +58,36 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                     @Override
                     public void onSuccess(LoginModel model) {
                         mvpView.registerData(model);
+                    }
+
+                    @Override
+                    public void onFailure(int code, String msg, ErrModel errData) {
+                        String massage = errData.getError().getMessage();
+                        mvpView.getDataFail(massage);
+                    }
+
+                    @Override
+                    public void onFailure(int code, String msg) {
+
+                        mvpView.getDataFail(msg);
+                    }
+
+                    @Override
+                    public void onCompleted() {
+                        mvpView.hideLoading();
+                    }
+                }));
+    }
+
+    public void modifyData(String uid, String password, String npassword) {
+        mvpView.showLoading();
+        addSubscription(apiStores.modifyData(uid, password, npassword),
+                new SubscriberCallBack<>(new ApiCallback<List<Integer>>() {
+
+                    @Override
+                    public void onSuccess(List<Integer> data) {
+                        System.out.println("data = " + data);
+                        mvpView.modifyData(data);
                     }
 
                     @Override

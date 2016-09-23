@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
 import com.zy.blogs.blogssample.fragment.LoginFragment;
+import com.zy.blogs.blogssample.fragment.RegisterFragment;
 
 /**
  * <p>
@@ -16,27 +17,30 @@ import com.zy.blogs.blogssample.fragment.LoginFragment;
  * <p>
  */
 public class LoginActivity extends BaseActivity {
-
+    private String type;
 
     @Override
     protected void setUpContentView() {
-        setContentView(R.layout.activity_login, R.string.login, R.menu.menu_main, 0);
+        setContentView(R.layout.activity_login, R.string.login, -1, 0);
     }
 
     @Override
     protected void setUpData() {
-        addFragment(new LoginFragment());
+        type = getIntent().getStringExtra(TYPE);
+        if (type.equals("login")) {
+            addFragment(new LoginFragment(), R.string.login);
+        } else {
+            addFragment(RegisterFragment.newInstance(type), R.string.modified_password);
+        }
     }
 
 
-    public void addFragment(Fragment fragment) {
+    public void addFragment(Fragment fragment, int str) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.login_layout, fragment)
                 .addToBackStack(((Object) fragment).getClass().getSimpleName())
                 .commitAllowingStateLoss();
-        System.out.println("getSupportFragmentManager().getBackStackEntryCount() = "
-                + getSupportFragmentManager().getBackStackEntryCount());
-        toolbar_title.setText(R.string.register);
+        toolbar_title.setText(str);
     }
 
     public void removeFragment() {
@@ -55,8 +59,9 @@ public class LoginActivity extends BaseActivity {
             if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
                 getSupportFragmentManager().popBackStack();
                 toolbar_title.setText(R.string.login);
-                System.out.println("getSupportFragmentManager().getBackStackEntryCount() = "
-                        + getSupportFragmentManager().getBackStackEntryCount());
+                return true;
+            } else {
+                finish();
                 return true;
             }
         }

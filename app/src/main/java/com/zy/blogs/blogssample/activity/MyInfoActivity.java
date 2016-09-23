@@ -4,6 +4,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.zy.blogs.blogssample.R;
@@ -34,8 +35,7 @@ public class MyInfoActivity extends BaseActivity {
 
     @Override
     protected void setUpContentView() {
-        setContentView(R.layout.activity_my_info, -1, R.menu.menu_drawer, MODE_BACK);
-
+        setContentView(R.layout.activity_my_info, -1, R.menu.menu_myinfo, MODE_BACK);
     }
 
     @Override
@@ -59,4 +59,9 @@ public class MyInfoActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        GoActivity(ModifyMyInfoActivity.class);
+        return super.onMenuItemClick(item);
+    }
 }

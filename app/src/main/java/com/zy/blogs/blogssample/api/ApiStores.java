@@ -4,6 +4,8 @@ import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.model.UpdateModel;
 import com.zy.blogs.blogssample.model.UserModel;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -45,6 +47,19 @@ public interface ApiStores {
     @POST("user-register/register")
     Observable<LoginModel> registerData(@Field("username") String username, @Field("password") String password);
 
+
+    /**
+     * 修改密码
+     *
+     * @param uid
+     * @param password
+     * @param npassword
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("user/update-user-password")
+    Observable<List<Integer>> modifyData(@Field("uid") String uid, @Field("o-password") String password, @Field("n-password") String npassword);
+
     /**
      * 上传图片
      *
@@ -55,6 +70,14 @@ public interface ApiStores {
     @POST("upload-file/app-upload-file?action=uploadimage&encode=utf-8")
     Observable<UpdateModel> updateImage(@Part("upfile\"; filename=\"1111.jpg\"") RequestBody file);
 
+    /**
+     * 显示用户数据
+     *
+     * @param app
+     * @param page
+     * @param showall
+     * @return
+     */
     @FormUrlEncoded
     @POST("user/list")
     Observable<UserModel> homeLoad(@Field("rpp") String app, @Field("page") String page,

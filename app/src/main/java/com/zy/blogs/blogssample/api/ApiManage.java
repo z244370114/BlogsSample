@@ -1,5 +1,7 @@
 package com.zy.blogs.blogssample.api;
 
+import com.zy.blogs.blogssample.BuildConfig;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -13,10 +15,8 @@ public class ApiManage {
 
     public static ApiManage apiManage;
     private static int cacheSize = 10 * 1024 * 1024; // 10 MiB
-    private static OkHttpClient client = new OkHttpClient.Builder()
-            .build();
-    //    public LoginApi loginApi;
     private static Object blogsMonitor = new Object();
+
 
     public static ApiManage getInstence() {
         if (apiManage == null) {
@@ -37,11 +37,12 @@ public class ApiManage {
             synchronized (blogsMonitor) {
                 OkHttpClient.Builder builder = new OkHttpClient.Builder();
 //                // Log信息拦截器
-                HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-                loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+                if (BuildConfig.DEBUG) {
+                    HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+                    loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 //                //设置 Debug Log 模式
-                builder.addInterceptor(loggingInterceptor);
-
+                    builder.addInterceptor(loggingInterceptor);
+                }
                 OkHttpClient okHttpClient = builder.build();
                 mRetrofit = new Retrofit.Builder()
                         .baseUrl(ApiStores.BASE_URL)

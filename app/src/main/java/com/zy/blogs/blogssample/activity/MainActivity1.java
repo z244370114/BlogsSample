@@ -44,11 +44,7 @@ public class MainActivity1 extends BaseActivity {
                 .replace(R.id.container, new MainFragment(), "Main")
                 .commit();
 
-        rlHeader.setOnClickListener(v -> {
-
-            GoActivity(LoginActivity.class);
-
-        });
+        rlHeader.setOnClickListener(v -> GoActivity(LoginActivity.class, "login"));
 
         mNavigationView.setNavigationItemSelectedListener(menuItem -> {
             @IdRes
@@ -58,17 +54,16 @@ public class MainActivity1 extends BaseActivity {
                     GoActivity(MyInfoActivity.class);
                     break;
                 case R.id.nav_modified_password:
-
+                    GoActivity(LoginActivity.class, "modify");
                     break;
                 case R.id.nav_action_settings:
-
+                    mDrawerLayout.closeDrawers();
                     break;
                 case R.id.nav_about:
-
+                    mDrawerLayout.closeDrawers();
                     break;
             }
             menuItem.setChecked(true);
-            mDrawerLayout.closeDrawers();
             return true;
         });
     }

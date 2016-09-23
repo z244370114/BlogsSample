@@ -1,6 +1,7 @@
 package com.zy.blogs.blogssample.fragment;
 
 import android.support.design.widget.TextInputEditText;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
@@ -12,6 +13,8 @@ import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.MvpFragment;
 import com.zy.blogs.blogssample.mvp.main.LoginPresenter;
 import com.zy.blogs.blogssample.mvp.main.LoginView;
+
+import java.util.List;
 
 import butterknife.Bind;
 
@@ -34,8 +37,6 @@ public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginV
     Button btnLogin;
     @Bind(R.id.btn_register)
     Button btnRegister;
-    @Bind(R.id.btn_upfile)
-    Button btnUpfile;
     @Bind(R.id.mProgressBar)
     ProgressBar mProgressBar;
 
@@ -62,7 +63,7 @@ public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginV
             }
         });
 
-        btnRegister.setOnClickListener(v -> ((LoginActivity) getActivity()).addFragment(new RegisterFragment()));
+        btnRegister.setOnClickListener(v -> ((LoginActivity) getActivity()).addFragment(RegisterFragment.newInstance("register"), R.string.register));
     }
 
     @Override
@@ -82,18 +83,23 @@ public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginV
     }
 
     @Override
-    public void getDataFail(String msg) {
+    public void modifyData(List<Integer> data) {
 
+    }
+
+    @Override
+    public void getDataFail(String msg) {
+        showToast(msg);
     }
 
     @Override
     public void showLoading() {
-
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        mProgressBar.setVisibility(View.GONE);
     }
 
 }

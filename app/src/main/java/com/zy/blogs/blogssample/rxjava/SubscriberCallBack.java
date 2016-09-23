@@ -28,6 +28,8 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
     private static final int BAD_GATEWAY = 502;
     private static final int SERVICE_UNAVAILABLE = 503;
     private static final int GATEWAY_TIMEOUT = 504;
+    private static final int SUCCESSERR = 422;
+    private static final int SUCCESS = 200;
 
 
     private ApiCallback<T> apiCallback;
@@ -47,10 +49,13 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
         e.printStackTrace();
         if (e instanceof HttpException) {
             HttpException httpException = (HttpException) e;
-            errData = handle(httpException);
             int code = httpException.code();
             String msg = httpException.getMessage();
             switch (code) {
+                case SUCCESS:
+                case SUCCESSERR:
+                    errData = handle(httpException);
+                    break;
                 case UNAUTHORIZED:
                 case FORBIDDEN:
                 case NOT_FOUND:
@@ -61,6 +66,7 @@ public class SubscriberCallBack<T> extends Subscriber<T> {
                 case SERVICE_UNAVAILABLE:
                 default:
                     msg = "网络错误";  //均视为网络错误
+                    apiCallback.onFailure(code, msg);
                     break;
             }
             apiCallback.onFailure(code, msg, errData);
