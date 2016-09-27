@@ -21,6 +21,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/rl_avatar"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"
@@ -55,6 +56,7 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
+                    android:id="@+id/rl_username"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"
@@ -84,6 +86,7 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
+                    android:id="@+id/rl_post"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"
@@ -113,6 +116,7 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
+                    android:id="@+id/rl_corporation"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"
@@ -142,6 +146,7 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
+                    android:id="@+id/rl_recommend"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"
@@ -171,6 +176,7 @@
                     android:background="@color/gray" />
 
                 <RelativeLayout
+                    android:id="@+id/rl_blogs_address"
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:layout_marginLeft="18dp"

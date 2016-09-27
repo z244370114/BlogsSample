@@ -83,5 +83,16 @@ public interface ApiStores {
     Observable<UserModel> homeLoad(@Field("rpp") String app, @Field("page") String page,
                                    @Field("showall") String showall);
 
-
+    /**
+     * 更改用户资料
+     *
+     * @param uid
+     * @param email
+     * @param avatar_url
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("user/update-user-data")
+    Observable<List<Integer>> modifyUserData(@Field("uid") String uid, @Field("rpp") String email,
+                                             @Field("avatar_url") String avatar_url);
 }

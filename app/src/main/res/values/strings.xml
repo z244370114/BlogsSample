@@ -18,4 +18,6 @@
     <string name="corporation">公司</string>
     <string name="recommend">简介</string>
     <string name="blogs_address">博客地址</string>
+    <string name="photo">相册</string>
+    <string name="save">保存</string>
 </resources>

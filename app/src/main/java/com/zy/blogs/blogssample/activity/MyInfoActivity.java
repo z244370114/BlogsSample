@@ -5,6 +5,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.zy.blogs.blogssample.R;
@@ -32,6 +33,8 @@ public class MyInfoActivity extends BaseActivity {
     TabLayout tabLayout;
     @Bind(R.id.viewPager)
     ViewPager viewPager;
+    @Bind(R.id.btn_redact)
+    Button btnRedact;
 
     @Override
     protected void setUpContentView() {
@@ -57,6 +60,8 @@ public class MyInfoActivity extends BaseActivity {
             }
         });
 
+        btnRedact.setOnClickListener(v -> GoActivity(ModifyMyInfoActivity.class));
+
     }
 
     @Override
@@ -64,4 +69,5 @@ public class MyInfoActivity extends BaseActivity {
         GoActivity(ModifyMyInfoActivity.class);
         return super.onMenuItemClick(item);
     }
+
 }

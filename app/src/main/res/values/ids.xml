@@ -29,5 +29,7 @@
     <item name="tv_corporation" type="id" />
     <item name="tv_recommend" type="id" />
     <item name="tv_blogs_address" type="id" />
+    <item name="redact" type="id" />
+    <item name="save" type="id" />
 
 </resources>

@@ -57,6 +57,7 @@ public class MainActivity1 extends BaseActivity {
                     GoActivity(LoginActivity.class, "modify");
                     break;
                 case R.id.nav_action_settings:
+                    GoActivity(PhotoActivity.class);
                     mDrawerLayout.closeDrawers();
                     break;
                 case R.id.nav_about:

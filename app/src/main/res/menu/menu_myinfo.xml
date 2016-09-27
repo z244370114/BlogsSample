@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@id/repeat"
+        android:id="@id/redact"
         android:orderInCategory="100"
         android:title="@string/redact"
         app:showAsAction="never" />

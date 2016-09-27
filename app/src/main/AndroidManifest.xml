@@ -33,6 +33,7 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MyInfoActivity" />
         <activity android:name=".activity.ModifyMyInfoActivity" />
+        <activity android:name=".activity.PhotoActivity" />
         <!-- UMeng 配置-->
         <!--<meta-data-->
         <!--android:name="UMENG_CHANNEL"-->
@@ -40,6 +41,17 @@
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="57df487167e58e15eb0004ba" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.zy.blogs.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
     </application>
 
 </manifest>
