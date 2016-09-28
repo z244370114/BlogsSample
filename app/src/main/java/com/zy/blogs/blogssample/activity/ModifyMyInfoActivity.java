@@ -7,12 +7,14 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.blankj.utilcode.utils.ImageUtils;
 import com.blankj.utilcode.utils.SDCardUtils;
+import com.blankj.utilcode.utils.SizeUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.mvp.MvpActivity;
@@ -26,6 +28,7 @@ import butterknife.Bind;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 
+
 /**
  * <p/>
  * 作者：zhouyuan on  2016/9/23 17:33
@@ -33,7 +36,6 @@ import okhttp3.RequestBody;
  * 邮箱：244370114@qq.com
  * <p/>
  */
-
 public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> implements ModifyMyInfyView {
 
     @Bind(R.id.iv_avatar)
@@ -61,11 +63,12 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
     @Bind(R.id.rl_blogs_address)
     RelativeLayout rlBlogsAddress;
     private Uri photoUri;
-    private int SELECT_PIC_BY_TACK_PHOTO = 111;
-    private int SELECT_PIC_BY_PICK_PHOTO = 222;
+    private static final int SELECT_PIC_BY_TACK_PHOTO = 111;
+    private static final int SELECT_PIC_BY_PICK_PHOTO = 222;
     private String picPath = "";
     private RequestBody body;
     private String avater_url;
+    private static final int CROP_SMALL_PICTURE = 333;
 
     @Override
     protected void setUpContentView() {
@@ -78,7 +81,6 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
     @Override
     protected void setUpData() {
         rlAvatar.setOnClickListener(v -> new MaterialDialog.Builder(this)
-//                .title(R.string.home)
                 .items(R.array.items)
                 .itemsColor(getResources().getColor(R.color.primary_text))
                 .itemsCallback((dialog, view, which, text) -> {
@@ -91,6 +93,24 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
                             break;
                     }
                 }).show());
+
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+//        int itemId = item.getItemId();
+//        if (itemId == R.id.save) {
+        new MaterialDialog.Builder(this)
+                .title("提示")
+                .content(R.string.content)
+                .positiveText(R.string.agree)
+                .negativeText(R.string.disagree)
+                .onPositive((dialog, which) -> mvpPresenter.modifyUserData("1", "eeeeeeee", avater_url))
+                .onNegative((dialog, which) -> dialog.dismiss())
+                .show();
+//            return true;
+//        }
+        return super.onMenuItemClick(item);
     }
 
     /**
@@ -134,19 +154,21 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
         }
         // 可以使用同一个方法，这里分开写为了防止以后扩展不同的需求
         switch (requestCode) {
-            case 222:// 如果是直接从相册获取
+            case SELECT_PIC_BY_PICK_PHOTO:// 如果是直接从相册获取
                 doPhoto(requestCode, data);
                 break;
-            case 111:// 如果是调用相机拍照时
+            case SELECT_PIC_BY_TACK_PHOTO:// 如果是调用相机拍照时
                 doPhoto(requestCode, data);
+                break;
+            case CROP_SMALL_PICTURE:
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
 
     }
 
-    private void doPhoto(int requestCode, Intent data) {
 
+    private void doPhoto(int requestCode, Intent data) {
         // 从相册取图片，有些手机有异常情况，请注意
         if (requestCode == SELECT_PIC_BY_PICK_PHOTO) {
             if (data == null) {
@@ -160,8 +182,6 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
             }
         }
         String[] pojo = {MediaStore.MediaColumns.DATA};
-        // The method managedQuery() from the type Activity is deprecated
-        //Cursor cursor = managedQuery(photoUri, pojo, null, null, null);
         Cursor cursor = getContentResolver().query(photoUri, pojo, null, null, null);
         if (cursor != null) {
             int columnIndex = cursor.getColumnIndexOrThrow(pojo[0]);
@@ -174,7 +194,7 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
         }
         if (picPath != null && ImageUtils.isImage(picPath)) {
 
-            Bitmap map = ImageUtils.getBitmap(picPath);
+            Bitmap map = ImageUtils.getBitmap(picPath, SizeUtils.dp2px(this, 50f), SizeUtils.dp2px(this, 50f));
             ivAvatar.setImageBitmap(map);
             File file = new File(picPath);
             body = RequestBody.create(MediaType.parse("multipart/form-data"), file);

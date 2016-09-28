@@ -93,6 +93,16 @@ public interface ApiStores {
      */
     @FormUrlEncoded
     @POST("user/update-user-data")
-    Observable<List<Integer>> modifyUserData(@Field("uid") String uid, @Field("rpp") String email,
+    Observable<List<Integer>> modifyUserData(@Field("uid") String uid, @Field("email") String email,
                                              @Field("avatar_url") String avatar_url);
+
+    /**
+     * 读取某一条用户数据
+     *
+     * @param uid
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("user/read")
+    Observable<UserModel> readUserData(@Field("uid") String uid);
 }

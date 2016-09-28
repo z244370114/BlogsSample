@@ -20,4 +20,7 @@
     <string name="blogs_address">博客地址</string>
     <string name="photo">相册</string>
     <string name="save">保存</string>
+    <string name="content">是否要修改信息</string>
+    <string name="agree">确定</string>
+    <string name="disagree">取消</string>
 </resources>
