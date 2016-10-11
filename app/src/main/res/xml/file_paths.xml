@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <external-path name="my_images" path="Android/data/com.zy.blogs.blogssample/files/Photo/" />
-    <external-path name="images" path="Camera/" />
-    <external-path name="dcim" path="DCIM/" />
-</paths>
+<resources>
+    <paths>
+        <!--<external-path-->
+            <!--name="my_images"-->
+            <!--path="Android/data/com.zy.blogs.blogssample/files/Photo/" />-->
+        <!--<external-path-->
+            <!--name="images"-->
+            <!--path="Camera/" />-->
+        <!--<external-path-->
+            <!--name="dcim"-->
+            <!--path="DCIM/" />-->
+        <external-path
+            name="camera_photos"
+            path="" />
+    </paths>
+</resources>

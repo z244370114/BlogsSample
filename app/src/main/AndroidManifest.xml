@@ -34,6 +34,7 @@
         <activity android:name=".activity.MyInfoActivity" />
         <activity android:name=".activity.ModifyMyInfoActivity" />
         <activity android:name=".activity.PhotoActivity" />
+        <activity android:name=".activity.WebViewActivity" />
         <!-- UMeng 配置-->
         <!--<meta-data-->
         <!--android:name="UMENG_CHANNEL"-->
@@ -42,6 +43,8 @@
             android:name="UMENG_APPKEY"
             android:value="57df487167e58e15eb0004ba" />
 
+        <!--exported:要求必须为false，为true则会报安全异常-->
+        <!--grantUriPermissions:true，表示授予 URI 临时访问权限。-->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.zy.blogs.fileprovider"

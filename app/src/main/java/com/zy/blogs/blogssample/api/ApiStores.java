@@ -1,5 +1,6 @@
 package com.zy.blogs.blogssample.api;
 
+import com.zy.blogs.blogssample.model.GankModel;
 import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.model.UpdateModel;
 import com.zy.blogs.blogssample.model.UserModel;
@@ -9,9 +10,11 @@ import java.util.List;
 import okhttp3.RequestBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -23,7 +26,8 @@ import rx.Observable;
  */
 public interface ApiStores {
 
-    String BASE_URL = "http://www.myblog.com/api/";
+    //    String BASE_URL = "http://www.myblog.com/api/";
+    String BASE_URL = "http://gank.io/api/";//乾貨集中營API
 
     /**
      * 登录接口
@@ -105,4 +109,13 @@ public interface ApiStores {
     @FormUrlEncoded
     @POST("user/read")
     Observable<UserModel> readUserData(@Field("uid") String uid);
+
+    /**
+     * 干货集中营
+     * @param number
+     * @param page
+     * @return
+     */
+    @GET("data/Android/{number}/{page}")
+    Observable<GankModel> loadAndroidData(@Path("number") int number, @Path("page") int page);
 }

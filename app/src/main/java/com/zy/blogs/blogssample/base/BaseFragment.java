@@ -2,6 +2,7 @@ package com.zy.blogs.blogssample.base;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ public abstract class BaseFragment extends Fragment {
     private View mRootView;
     private LayoutInflater inflater;
     private Toast mToast;
+    public static final String TYPE = "type";
 
     @Nullable
     @Override
@@ -67,6 +69,28 @@ public abstract class BaseFragment extends Fragment {
             }
             mToast.show();
         }
+    }
+
+    /**
+     * 切换Activity
+     *
+     * @param c 需要切换到的Activity
+     */
+    public void GoActivity(Class<?> c) {
+        Intent intent = new Intent(mActivity, c);
+        this.startActivity(intent);
+    }
+
+    /**
+     * 切换Activity
+     *
+     * @param c    需要切换到的Activity
+     * @param type 参数
+     */
+    public void GoActivity(Class<?> c, String type) {
+        Intent intent = new Intent(mActivity, c);
+        intent.putExtra(TYPE, type);
+        this.startActivity(intent);
     }
 
 

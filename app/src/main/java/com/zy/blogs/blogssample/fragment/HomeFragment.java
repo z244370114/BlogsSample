@@ -42,7 +42,7 @@ public class HomeFragment extends MvpFragment<HomePresenter> implements HomeVew 
 
     @Override
     protected void setUpData() {
-        mvpPresenter.homeLoadData("10", "1", "showall");
+//        mvpPresenter.homeLoadData("10", "1", "showall");
     }
 
 
