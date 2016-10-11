@@ -6,8 +6,10 @@
 
     <include layout="@layout/toolbar_title" />
 
-    <WebView
+    <com.zy.blogs.blogssample.widget.ProgressWebView
         android:id="@id/webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></WebView>
+        android:layout_height="match_parent">
+
+    </com.zy.blogs.blogssample.widget.ProgressWebView>
 </LinearLayout>

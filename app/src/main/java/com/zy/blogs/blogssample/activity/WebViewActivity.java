@@ -6,6 +6,7 @@ import android.webkit.WebViewClient;
 
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
+import com.zy.blogs.blogssample.widget.ProgressWebView;
 
 import butterknife.Bind;
 
@@ -20,7 +21,7 @@ import butterknife.Bind;
 public class WebViewActivity extends BaseActivity {
 
     @Bind(R.id.webview)
-    WebView webview;
+    ProgressWebView webview;
     private String url;
 
     @Override
