@@ -10,6 +10,16 @@
                 android:startColor="#C8C8C8" />
         </shape>
     </item>
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <shape>
+                <gradient
+                    android:centerColor="#4AEA2F"
+                    android:endColor="#31CE15"
+                    android:startColor="#5FEC46" />
+            </shape>
+        </clip>
+    </item>
     <item android:id="@android:id/progress">
         <clip>
             <shape>

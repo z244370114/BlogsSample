@@ -1,6 +1,7 @@
 package com.zy.blogs.blogssample.widget;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.webkit.WebView;
@@ -28,8 +29,9 @@ public class ProgressWebView extends WebView {
         addView(progressbar);
         // setWebViewClient(new WebViewClient(){});
         setWebChromeClient(new WebChromeClient());
+        setWebViewClient(new WebViewClient());
         //是否可以缩放
-        getSettings().setSupportZoom(true);
+//        getSettings().setSupportZoom(true);
         getSettings().setBuiltInZoomControls(true);
 
     }
@@ -48,7 +50,20 @@ public class ProgressWebView extends WebView {
             super.onProgressChanged(view, newProgress);
         }
 
+    }
 
+    public class WebViewClient extends android.webkit.WebViewClient {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            progressbar.setVisibility(VISIBLE);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressbar.setVisibility(GONE);
+        }
     }
 
     @Override

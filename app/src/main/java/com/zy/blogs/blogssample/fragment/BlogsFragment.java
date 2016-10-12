@@ -44,7 +44,7 @@ public class BlogsFragment extends MvpFragment<BlogsPresenter> implements BlogsV
 
     @Override
     protected void setUpData() {
-        mvpPresenter.loadData(10, 2);
+        mvpPresenter.loadData(20, 2);
     }
 
     @Override

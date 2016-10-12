@@ -1,12 +1,12 @@
 package com.zy.blogs.blogssample.activity;
 
+import android.graphics.Bitmap;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
-import com.zy.blogs.blogssample.widget.ProgressWebView;
 
 import butterknife.Bind;
 
@@ -21,12 +21,15 @@ import butterknife.Bind;
 public class WebViewActivity extends BaseActivity {
 
     @Bind(R.id.webview)
-    ProgressWebView webview;
+    WebView webview;
     private String url;
 
     @Override
     protected void setUpContentView() {
-        setContentView(R.layout.activity_webview, -1, -1, 0);
+        setContentView(R.layout.activity_webview, -1, R.menu.menu_main, 0);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.white));
+        toolbar.setNavigationIcon(R.drawable.icon_back_black);
+//        toolbar_title.setTextColor(getResources().getColor(R.color.primary_text));
     }
 
     @Override
@@ -45,7 +48,17 @@ public class WebViewActivity extends BaseActivity {
                 return super.shouldOverrideUrlLoading(view, url);
             }
 
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+            }
         });
+
         webview.setWebChromeClient(new WebChromeClient() {
 
             @Override
