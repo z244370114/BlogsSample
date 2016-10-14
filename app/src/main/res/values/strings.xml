@@ -23,4 +23,7 @@
     <string name="content">是否要修改信息</string>
     <string name="agree">确定</string>
     <string name="disagree">取消</string>
+    <string name="share">分享</string>
+    <string name="copy">复制</string>
+    <string name="jump_web">跳转web</string>
 </resources>

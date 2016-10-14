@@ -26,7 +26,7 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     protected void setUpContentView() {
-        setContentView(R.layout.activity_webview, -1, R.menu.menu_main, 0);
+        setContentView(R.layout.activity_webview, -1, R.menu.menu_webview, 0);
         toolbar.setBackgroundColor(getResources().getColor(R.color.white));
         toolbar.setNavigationIcon(R.drawable.icon_back_black);
 //        toolbar_title.setTextColor(getResources().getColor(R.color.primary_text));

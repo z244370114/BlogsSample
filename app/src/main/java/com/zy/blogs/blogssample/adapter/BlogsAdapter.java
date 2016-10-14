@@ -35,6 +35,7 @@ public class BlogsAdapter extends CommonBaseAdapter<GankModel> {
             String images = gankModel.getImages().get(0);
             Glide.with(context)
                     .load(images)
+                    .asBitmap()
                     .into((ImageView) viewHolder.getView(R.id.iv_image));
         }
     }
