@@ -57,9 +57,7 @@ public class MainFragment extends BaseFragment {
             }
         });
 
-        mToolbar.setNavigationOnClickListener(v -> {
-            ((MainActivity1) getActivity()).openDrawerLayou();
-        });
+        mToolbar.setNavigationOnClickListener(v -> ((MainActivity1) getActivity()).openDrawerLayou());
 
     }
 

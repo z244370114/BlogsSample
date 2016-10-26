@@ -39,4 +39,7 @@
     <item name="tv_share" type="id" />
     <item name="tv_comment" type="id" />
 
+    <item name="sLeftIconId" type="id" />
+    <item name="sCenterBaseLineId" type="id" />
+    <item name="sLeftBottomTextId" type="id" />
 </resources>
