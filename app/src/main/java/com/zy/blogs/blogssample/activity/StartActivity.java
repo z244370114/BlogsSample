@@ -3,6 +3,7 @@ package com.zy.blogs.blogssample.activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
 
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
@@ -19,8 +20,12 @@ public class StartActivity extends BaseActivity {
 
     @Override
     protected void setUpContentView() {
+        View mDecorView = getWindow().getDecorView();
+        mDecorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         setContentView(R.layout.activity_start, -1, MODE_NONE);
     }
+
 
     @Override
     protected void setUpData() {
