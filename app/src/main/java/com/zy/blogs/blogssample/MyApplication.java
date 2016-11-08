@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import com.squareup.leakcanary.LeakCanary;
+
 /**
  * Created by xinghongfei on 16/8/12.
  */
@@ -17,9 +19,7 @@ public class MyApplication extends Application {
     public static float screenDensity;
 
     public static Application getInstance() {
-
         return myApplication;
-
     }
 
     @Override
@@ -32,6 +32,10 @@ public class MyApplication extends Application {
         screenHeight = dm.heightPixels; // 屏幕高（像素，如：800px）
         screenDpi = dm.densityDpi;
         screenDensity = dm.density;
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     /**

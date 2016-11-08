@@ -33,7 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Toolbar.
     protected TextView toolbar_title;
     public static final int MODE_BACK = 0;
     public static final int MODE_DRAWER = 1;
-    public static final int MODE_NONE = 2;
+    public static final int MODE_NONE = 2; //没有该toobar
     public static final int MODE_HOME = 3;
     private Toast mToast;
 

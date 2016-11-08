@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton"
+            android:text="Text"
+            app:btnCornerRadius="10dp"
+            app:btnPressedRatio="0.8"
+            app:btnSolidColor="#3F51B5" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton"
+            android:text="Text"
+            app:btnCornerRadius="stadium"
+            app:btnPressedRatio="0.8"
+            app:btnSolidColor="#9C27B0" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton"
+            android:text="Text"
+            app:btnCornerRadius="stadium"
+            app:btnPressedRatio="0.8"
+            app:btnSolidColor="#03A9F4" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton"
+            android:enabled="false"
+            android:text="Text"
+            app:btnCornerRadius="10dp"
+            app:btnPressedRatio="0.9"
+            app:btnSolidColor="#4CAF50" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:text="Text"
+            app:btnCornerRadius="stadium"
+            app:btnPressedRatio="0.9"
+            app:btnSolidColor="@color/colorPrimary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--android:background="#CDDC39"-->
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton.Two"
+            android:text="Text"
+            android:textColor="#3F51B5"
+            app:btnCornerRadius="10dp"
+            app:btnPressedRatio="1.5"
+            app:btnStrokeColor="#3F51B5" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton.Two"
+            android:text="Text"
+            android:textColor="#9C27B0"
+            app:btnCornerRadius="stadium"
+            app:btnPressedRatio="0.5"
+            app:btnStrokeColor="#9C27B0"
+            app:btnStrokeDashGap="3dp"
+            app:btnStrokeDashWidth="6dp" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton.Two"
+            android:text="Text"
+            android:textColor="#03A9F4"
+            app:btnCornerRadius="stadium"
+            app:btnPressedRatio="0.9"
+            app:btnStrokeColor="#03A9F4" />
+
+        <com.zy.blogs.blogssample.widget.RoundButton
+            style="@style/RoundButton.Two"
+            android:text="Text"
+            android:textColor="#4CAF50"
+            app:btnCornerRadius="10dp"
+            app:btnPressedRatio="0.9"
+            app:btnStrokeColor="#4CAF50" />
+    </LinearLayout>
+
+    <com.zy.blogs.blogssample.widget.RoundButton
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:enabled="true"
+        android:text="周远"
+        android:textColor="@color/white"
+        app:btnCornerRadius="5dp"
+        app:btnPressedRatio="0.9"
+        app:btnSolidColor="@color/orange"
+        app:btnStrokeColor="#4CAF50"
+        app:btnStrokeWidth="1dp" />
+
+    <com.zy.blogs.blogssample.widget.ShapeTextView
+        android:id="@+id/shapetextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="ShapeTextview"
+        android:textSize="25sp"
+        app:bottomLeftRadius="10dp"
+        app:bottomRightRadius="0dp"
+        app:gradientCenterColor="#00000000"
+        app:solidColor="@color/orange1"
+        app:stroke_Color="@color/orange1"
+        app:stroke_Width="1dp"
+        app:topLeftRadius="0dp"
+        app:topRightRadius="10dp"
+        app:touchSolidColor="@color/orange" />
+
+    <com.zy.blogs.blogssample.widget.ShapeTextView
+        android:id="@+id/shapetextview1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="ORAL"
+        android:textSize="25sp"
+        app:shapeType="OVAL"
+        app:solidColor="#64D11C"
+        android:textColor="@color/white"
+        app:strokeDashGap="5dp"
+        app:strokeDashWidth="5dp"
+        app:stroke_Color="#D11B1E"
+        app:stroke_Width="2dp"
+        app:touchSolidColor="#F5B2B9" />
+
+    <com.zy.blogs.blogssample.widget.ShapeTextView
+        android:id="@+id/shapetextview2"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/about"
+        android:textSize="15sp"
+        app:cornesRadius="10dp"
+        app:solidColor="#64D11C"
+        app:stroke_Color="#D11B1E"
+        app:stroke_Width="1dp"
+        app:touchSolidColor="#F5B2B9" />
+</LinearLayout>

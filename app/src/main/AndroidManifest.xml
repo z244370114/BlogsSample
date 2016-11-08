@@ -36,6 +36,7 @@
         <activity android:name=".activity.PhotoActivity" />
         <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.CheckBoxRecycleView" />
+        <activity android:name=".activity.RoundButtonActivity" />
         <!-- UMeng 配置-->
         <!--<meta-data-->
         <!--android:name="UMENG_CHANNEL"-->

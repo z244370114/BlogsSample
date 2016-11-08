@@ -61,7 +61,8 @@ public class MainActivity1 extends BaseActivity {
                     mDrawerLayout.closeDrawers();
                     break;
                 case R.id.nav_about:
-                    GoActivity(CheckBoxRecycleView.class);
+//                    GoActivity(CheckBoxRecycleView.class);
+                    GoActivity(RoundButtonActivity.class);
                     mDrawerLayout.closeDrawers();
                     break;
             }
