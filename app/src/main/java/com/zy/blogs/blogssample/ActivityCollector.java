@@ -26,7 +26,7 @@ public class ActivityCollector {
 
     public void addActivity(Activity activity) {
         if (activityStack == null) {
-            activityStack = new Stack<Activity>();
+            activityStack = new Stack<>();
         }
         if (!isContaintActivity(activity.getClass())) {
             activityStack.add(activity);
