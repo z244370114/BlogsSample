@@ -6,6 +6,13 @@
     android:orientation="vertical"
     android:paddingTop="20dp">
 
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -133,10 +140,10 @@
         android:gravity="center"
         android:padding="5dp"
         android:text="ORAL"
+        android:textColor="@color/white"
         android:textSize="25sp"
         app:shapeType="OVAL"
         app:solidColor="#64D11C"
-        android:textColor="@color/white"
         app:strokeDashGap="5dp"
         app:strokeDashWidth="5dp"
         app:stroke_Color="#D11B1E"
@@ -156,4 +163,10 @@
         app:stroke_Color="#D11B1E"
         app:stroke_Width="1dp"
         app:touchSolidColor="#F5B2B9" />
+    <com.zy.blogs.blogssample.widget.IconfontView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&#xe6a0;"
+        android:textColor="#f00"
+        android:textSize="100sp" />
 </LinearLayout>

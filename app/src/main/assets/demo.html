@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Js调用Android</title>
+    <script>
+     window.onload = function(){
+          var height = 111;
+          window.webHeight.resize(height);
+        }
+
+     function showMyobjToast(toast) {
+        Android.showToast(toast);
+     }
+    function showDialog() {
+        Android.showDialog();
+    }
+    </script>
+</head>
+
+<body>
+<input type="button" value="Toast提示" onclick="showMyobjToast('曹神前来日狗~')"/>
+<input type="button" value="列表对话框" onclick="showDialog();"/>
+</body>
+</html>

@@ -1,9 +1,11 @@
 package com.zy.blogs.blogssample.activity;
 
 import android.graphics.Bitmap;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.zy.blogs.blogssample.R;
 import com.zy.blogs.blogssample.base.BaseActivity;
@@ -22,6 +24,8 @@ public class WebViewActivity extends BaseActivity {
 
     @Bind(R.id.webview)
     WebView webview;
+    @Bind(R.id.progressbar)
+    ProgressBar progressbar;
     private String url;
 
     @Override
@@ -36,7 +40,6 @@ public class WebViewActivity extends BaseActivity {
     protected void setUpData() {
 
         url = getIntent().getStringExtra(TYPE);
-
         webview.getSettings().setJavaScriptEnabled(true);
         webview.loadUrl(url);
         //强制在webview打开网页，防止使用系统默认的浏览器打开网页
@@ -68,6 +71,23 @@ public class WebViewActivity extends BaseActivity {
                 super.onReceivedTitle(view, title);
             }
 
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (progressbar != null) {
+                    progressbar.setMax(100);
+                    progressbar.setProgress(newProgress);
+                    // 如果进度大于或者等于100，则隐藏进度条
+                    if (newProgress >= 100) {
+                        progressbar.setVisibility(View.GONE);
+                    } else {
+                        if (!progressbar.isShown()) {
+                            progressbar.setVisibility(View.VISIBLE);
+                        }
+                        progressbar.setProgress(newProgress);
+                    }
+                }
+                super.onProgressChanged(view, newProgress);
+            }
         });
     }
 }
