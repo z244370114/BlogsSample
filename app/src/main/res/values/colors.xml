@@ -16,6 +16,7 @@
     <color name="primary">#03A9F4</color>
     <color name="orange">#FFFF6941</color>
     <color name="orange1">#FFFF7864</color>
+    <color name="zorange15">#ffff634e</color>
     <color name="trance_50percent_black">#80000000</color>
     <color name="common_pressed">#20000000</color> <!--白色背景按下去的颜色-->
 </resources>

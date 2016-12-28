@@ -1,6 +1,7 @@
 package com.zy.blogs.blogssample.fragment;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.zy.blogs.blogssample.model.LoginModel;
 import com.zy.blogs.blogssample.mvp.MvpFragment;
 import com.zy.blogs.blogssample.mvp.main.LoginPresenter;
 import com.zy.blogs.blogssample.mvp.main.LoginView;
+import com.zy.blogs.blogssample.widget.StateButton;
 
 import java.util.List;
 
@@ -39,6 +41,8 @@ public class RegisterFragment extends MvpFragment<LoginPresenter> implements Log
     TextInputEditText etEmail;
     @Bind(R.id.btn_register)
     Button btnRegister;
+    @Bind(R.id.btn_security_code)
+    StateButton btnSecurityCode;
     @Bind(R.id.mProgressBar)
     ProgressBar mProgressBar;
     @Bind(R.id.et_newuserpassword)
@@ -48,6 +52,7 @@ public class RegisterFragment extends MvpFragment<LoginPresenter> implements Log
     @Bind(R.id.email_layout)
     TextInputLayout emailLayout;
     private String mAction;
+    private TimeCount timeCount;
 
     public static RegisterFragment newInstance(String action) {
         RegisterFragment fragment = new RegisterFragment();
@@ -98,6 +103,12 @@ public class RegisterFragment extends MvpFragment<LoginPresenter> implements Log
         }
     }
 
+    @OnClick(R.id.btn_security_code)
+    public void setBtnSecurityCode() {
+        timeCount = new TimeCount(60 * 1000, 1000);
+        timeCount.start();
+    }
+
     @Override
     public void loginData(LoginModel data) {
 
@@ -123,11 +134,45 @@ public class RegisterFragment extends MvpFragment<LoginPresenter> implements Log
 
     @Override
     public void showLoading() {
-
     }
 
     @Override
     public void hideLoading() {
 
+    }
+
+    /***
+     * 获取验证码倒计时
+     */
+    private class TimeCount extends CountDownTimer {
+
+        public TimeCount(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            if (getActivity() != null) {
+                //todo
+                btnSecurityCode.setClickable(false);
+                btnSecurityCode.setEnabled(false);
+                btnSecurityCode.setText(millisUntilFinished / 1000 + "秒后可重发");
+            }
+        }
+
+        @Override
+        public void onFinish() {
+            if (getActivity() != null) {
+                btnSecurityCode.setText("重新获取");
+                btnSecurityCode.setClickable(true);
+                btnSecurityCode.setEnabled(true);
+            }
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        timeCount.cancel();
+        super.onDestroy();
     }
 }

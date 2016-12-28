@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -80,6 +81,26 @@
 
         </android.support.design.widget.TextInputLayout>
 
+
+        <com.zy.blogs.blogssample.widget.StateButton
+            android:id="@+id/btn_security_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/security_code"
+            app:animationDuration="0"
+            app:normalBackgroundColor="@android:color/white"
+            app:normalStrokeColor="@color/zorange15"
+            app:normalStrokeWidth="0.5dp"
+            app:normalTextColor="@color/zorange15"
+            app:pressedBackgroundColor="@color/orange1"
+            app:pressedStrokeColor="@color/zorange15"
+            app:pressedStrokeWidth="0.5dp"
+            app:pressedTextColor="@color/zorange15"
+            app:radius="2.5dp"
+            app:unableBackgroundColor="@color/secondary_text"
+            app:unableStrokeColor="@color/secondary_text"
+            app:unableStrokeWidth="0.5dp"
+            app:unableTextColor="@color/gray" />
 
         <Button
             android:id="@id/btn_register"

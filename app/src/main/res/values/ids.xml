@@ -42,4 +42,5 @@
     <item name="sLeftIconId" type="id" />
     <item name="sCenterBaseLineId" type="id" />
     <item name="sLeftBottomTextId" type="id" />
+    <item name="btn_security_code" type="id" />
 </resources>
