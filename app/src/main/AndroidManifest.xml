@@ -27,6 +27,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="web"
+                    android:scheme="test" />
+                <data
+                    android:host="start"
+                    android:scheme="test" />
+            </intent-filter>
+
         </activity>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.MainActivity1" />
@@ -37,6 +51,8 @@
         <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.CheckBoxRecycleView" />
         <activity android:name=".activity.RoundButtonActivity" />
+        <activity android:name=".activity.MyWebView" />
+
         <!-- UMeng 配置-->
         <!--<meta-data-->
         <!--android:name="UMENG_CHANNEL"-->
@@ -54,7 +70,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
     </application>

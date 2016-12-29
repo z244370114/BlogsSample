@@ -36,7 +36,8 @@ public class StartActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            startActivity(new Intent(StartActivity.this, MainActivity1.class));
+//            startActivity(new Intent(StartActivity.this, MainActivity1.class));
+            startActivity(new Intent(StartActivity.this, MyWebView.class));
             finish();
         }
     };

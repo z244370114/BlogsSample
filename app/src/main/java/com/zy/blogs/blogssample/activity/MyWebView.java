@@ -9,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.webkit.JavascriptInterface;
 import android.webkit.MimeTypeMap;
 import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -58,7 +60,7 @@ public class MyWebView extends Activity {
 //            }
 //        });
 
-
+        initData();
         WebSettings webSettings = webview.getSettings();
         //①设置WebView允许调用js
         webSettings.setJavaScriptEnabled(true);
@@ -66,8 +68,42 @@ public class MyWebView extends Activity {
         //②将object对象暴露给Js,调用addjavascriptInterface
 //        webview.addJavascriptInterface(new MyObject(MyWebView.this), "myObj");
         webview.addJavascriptInterface(new WebHeight(), "webHeight");
-        webview.loadUrl("file:///android_asset/demo.html");
+        webview.setWebViewClient(new WebViewClient() {
 
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                System.out.println("view = [" + view + "], url = [" + url + "]");
+                return true;
+            }
+        });
+        webview.loadUrl("file:///android_asset/test.html");
+    }
+
+    private void initData() {
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String scheme = intent.getScheme();
+        Uri uri = intent.getData();
+        System.out.println("action:" + action);
+        System.out.println("scheme:" + scheme);
+        if (uri != null) {
+            String host = uri.getHost();
+            String dataString = intent.getDataString();
+            String id = uri.getQueryParameter("id");
+            String name = String.valueOf(uri.getQueryParameters("name"));
+            String age = uri.getQueryParameter("age");
+            String path = uri.getPath();
+            String path1 = uri.getEncodedPath();
+            String queryString = uri.getQuery();
+            System.out.println("host:" + host);
+            System.out.println("dataString:" + dataString);
+            System.out.println("id:" + id);
+            System.out.println("name:" + name);
+            System.out.println("age:" + age);
+            System.out.println("path:" + path);
+            System.out.println("path1:" + path1);
+            System.out.println("queryString:" + queryString);
+        }
     }
 
 
