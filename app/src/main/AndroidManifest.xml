@@ -44,7 +44,16 @@
         </activity>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.MainActivity1" />
-        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="login"
+                    android:scheme="test" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.MyInfoActivity" />
         <activity android:name=".activity.ModifyMyInfoActivity" />
         <activity android:name=".activity.PhotoActivity" />

@@ -11,6 +11,7 @@ import android.webkit.MimeTypeMap;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ import com.zy.blogs.blogssample.R;
 public class MyWebView extends Activity {
 
     private ScorllWebView webview;
+    private Button button;
     private long exitTime = 0;
 
     @SuppressLint("AddJavascriptInterface")
@@ -34,6 +36,7 @@ public class MyWebView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_webview);
         webview = (ScorllWebView) findViewById(R.id.webview);
+        button = (Button) findViewById(R.id.button);
 
 //        webview.getSettings().setJavaScriptEnabled(true);
 //        webview.addJavascriptInterface(new WebHeight(), "webHeight");
@@ -104,6 +107,8 @@ public class MyWebView extends Activity {
             System.out.println("path1:" + path1);
             System.out.println("queryString:" + queryString);
         }
+
+        button.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("test://login/123123123"))));
     }
 
 
