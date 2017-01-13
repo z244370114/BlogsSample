@@ -118,9 +118,9 @@ public class SuperTextView extends RelativeLayout {
     public SuperTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-        defaultLinePadding = SizeUtils.dp2px(context, 16);
-        defaultPadding = SizeUtils.dp2px(context, 16);
-        defaultSize = SizeUtils.sp2px(context, 14);
+        defaultLinePadding = SizeUtils.dp2px(16);
+        defaultPadding = SizeUtils.dp2px(16);
+        defaultSize = SizeUtils.sp2px(14);
         getAttr(attrs);
 
         initLayout();
@@ -245,7 +245,7 @@ public class SuperTextView extends RelativeLayout {
      */
     private void initTopLine(int lineMargin) {
         View topLine = new View(mContext);
-        topLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px(mContext, 1));
+        topLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px( 1));
         topLineParams.addRule(RelativeLayout.ALIGN_PARENT_TOP, TRUE);
         topLineParams.setMargins(lineMargin, 0, lineMargin, 0);
         topLine.setLayoutParams(topLineParams);
@@ -258,7 +258,7 @@ public class SuperTextView extends RelativeLayout {
      */
     private void initBottomLine(int lineMargin) {
         View bottomLine = new View(mContext);
-        bottomLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px(mContext, 1));
+        bottomLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px( 1));
         bottomLineParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, TRUE);
         bottomLineParams.setMargins(lineMargin, 0, lineMargin, 0);
         bottomLine.setLayoutParams(bottomLineParams);
@@ -290,7 +290,7 @@ public class SuperTextView extends RelativeLayout {
      */
     private void initCenterBaseLine() {
         View view = new View(mContext);
-        centerBaseLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px(mContext, 10));
+        centerBaseLineParams = new LayoutParams(LayoutParams.MATCH_PARENT, SizeUtils.dp2px( 10));
         centerBaseLineParams.addRule(RelativeLayout.CENTER_VERTICAL, TRUE);
         view.setId(R.id.sCenterBaseLineId);
         view.setLayoutParams(centerBaseLineParams);

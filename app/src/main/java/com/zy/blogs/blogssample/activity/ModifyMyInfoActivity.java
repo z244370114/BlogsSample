@@ -194,7 +194,7 @@ public class ModifyMyInfoActivity extends MvpActivity<ModifyMyInfyPresenter> imp
         }
         if (picPath != null && ImageUtils.isImage(picPath)) {
 
-            Bitmap map = ImageUtils.getBitmap(picPath, SizeUtils.dp2px(this, 50f), SizeUtils.dp2px(this, 50f));
+            Bitmap map = ImageUtils.getBitmap(picPath, SizeUtils.dp2px(50f), SizeUtils.dp2px(50f));
             ivAvatar.setImageBitmap(map);
             File file = new File(picPath);
             body = RequestBody.create(MediaType.parse("multipart/form-data"), file);
